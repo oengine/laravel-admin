@@ -1,0 +1,24 @@
+{
+    "name": "oengine/admin",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nguyen Van Hau",
+            "email": "nguyenvanhaudev@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": ["OEngine\\Admin\\LaravelAdminServiceProvider"],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "OEngine\\Admin\\": "src",
+            "OEngine\\Admin\\Widget\\": "widgets",
+            "OEngine\\Admin\\Database\\Factories\\": "database/factories",
+            "OEngine\\Admin\\Database\\Seeders\\": "database/seeders"
+        }
+    }
+}

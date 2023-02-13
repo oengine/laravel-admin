@@ -1,0 +1,12 @@
+{
+    "id":"module-laravel-admin-640e7d39-165b-47c5-a895-5e996e375f9b2832469",
+    "name": "laravel-admin",
+    "alias": "admin",
+    "description": "",
+    "keywords": [],
+    "priority": 100,
+    "namespace":"OEngine\\Admin",
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
