@@ -3,13 +3,15 @@
     "description": "",
     "authors": [
         {
-            "name": "Nguyen Van Hau",
-            "email": "nguyenvanhaudev@gmail.com"
+          "name": "Nguyen Van Hau",
+          "email": "nguyenvanhau.soft@gmail.com",
+          "role": "Developer",
+          "homepage": "https://github.com/devhau"
         }
     ],
     "extra": {
         "laravel": {
-            "providers": ["OEngine\\Admin\\LaravelAdminServiceProvider"],
+            "providers": ["OEngine\\Admin\\AdminServiceProvider"],
             "aliases": {}
         }
     },
