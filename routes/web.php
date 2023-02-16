@@ -11,3 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
+Route::get('login', function () {
+    return view('admin::login');
+})->name('login');
