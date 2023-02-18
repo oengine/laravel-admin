@@ -4,6 +4,7 @@ namespace OEngine\Admin;
 
 use Illuminate\Support\ServiceProvider;
 use OEngine\LaravelPackage\ServicePackage;
+use OEngine\Platform\Facades\Module;
 use OEngine\Platform\Traits\WithServiceProvider;
 
 class AdminServiceProvider extends ServiceProvider
@@ -42,6 +43,7 @@ class AdminServiceProvider extends ServiceProvider
             });
         }
     }
+
     public function packageBooted()
     {
         $this->bootGate();

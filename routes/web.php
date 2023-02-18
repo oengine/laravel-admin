@@ -11,8 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use OEngine\Platform\Middleware\ThemeAdmin;
 
-Route::get('login', function () {
-    return view('admin::login');
-})->name('login');
+// Route::name('auth.')->prefix('auth')->middleware(ThemeAdmin::class)->group(function () {
+//     Route::get('login', function () {
+//         Log::info('2-----');
+//         return view('theme::page.auth.login');
+//     })->name('login');
+
+//     Route::get('sign-up', function () {
+//         return view('theme:page.auth.sign-up');
+//     })->name('sign-up');
+//     Route::get('forgot-password', function () {
+//         return view('theme:page.auth.forgot-password');
+//     })->name('forgot-password');
+// });

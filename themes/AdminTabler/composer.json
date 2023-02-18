@@ -1,0 +1,24 @@
+{
+    "name": "platform/theme-admintabler",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nguyen Van Hau",
+            "email": "nguyenvanhaudev@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": ["Platform\\Themes\\AdminTabler\\AdminTablerServiceProvider"],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Platform\\Themes\\AdminTabler\\": "src",
+            "Platform\\Themes\\AdminTabler\\Widget\\": "widgets",
+            "Platform\\Themes\\AdminTabler\\Database\\Factories\\": "database/factories",
+            "Platform\\Themes\\AdminTabler\\Database\\Seeders\\": "database/seeders"
+        }
+    }
+}

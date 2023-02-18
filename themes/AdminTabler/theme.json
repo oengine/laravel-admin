@@ -1,0 +1,14 @@
+{
+  "id": "theme-admintabler-27882b66-90e1-4747-bf04-908f721460b95390441",
+  "name": "AdminTabler",
+  "alias": "admintabler",
+  "admin": 1,
+  "description": "",
+  "keywords": [],
+  "priority": 200,
+  "aliases": {},
+  "namespace": "Platform\\Themes\\AdminTabler",
+  "layout": "layout",
+  "layouts": ["none", "layout"],
+  "requires": []
+}
