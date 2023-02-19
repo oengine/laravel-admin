@@ -1,4 +1,4 @@
-@extends(\OEngine\Platform\Facades\Theme::Layout())
+@extends(theme_layout())
 @section('content')
     <h1>Hello World</h1>
 

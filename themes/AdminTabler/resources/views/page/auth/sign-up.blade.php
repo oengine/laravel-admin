@@ -1,4 +1,4 @@
-@extends(\OEngine\Platform\Facades\Theme::Layout())
+@extends(theme_layout())
 @section('content')
 <div class="page page-center">
       <div class="container container-tight py-4">
