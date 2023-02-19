@@ -16,6 +16,10 @@
         }
     },
     "autoload": {
+        "files": [
+          "helpers/constraint.php",
+          "helpers/admin.php"
+        ],
         "psr-4": {
             "OEngine\\Admin\\": "src",
             "OEngine\\Admin\\Widget\\": "widgets",
