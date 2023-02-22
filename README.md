@@ -1,2 +1,2 @@
 # laravel-admin
-laravel-admin
+laravel-admin is a Laravel administration package that allows web developers to quickly create an admin panel for their website. The package includes features such as user management, access control management, task management, file management, email management, and many more. The package is designed to save time and effort in building an admin panel and allows developers to focus on building the core features of their web application.
