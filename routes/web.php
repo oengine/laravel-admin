@@ -13,18 +13,17 @@
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use OEngine\Admin\Http\Controllers\AuthController;
 use OEngine\Platform\Middleware\ThemeAdmin;
 
-// Route::name('auth.')->prefix('auth')->middleware(ThemeAdmin::class)->group(function () {
-//     Route::get('login', function () {
-//         Log::info('2-----');
-//         return view('theme::page.auth.login');
-//     })->name('login');
+Route::name('auth.')->prefix('auth')->middleware(ThemeAdmin::class)->group(function () {
+    Route::get('login', [AuthController::class, 'getLogin'])->name('login');
+    Route::post('login', [AuthController::class, 'postLogin'])->name('login');
 
-//     Route::get('sign-up', function () {
-//         return view('theme:page.auth.sign-up');
-//     })->name('sign-up');
-//     Route::get('forgot-password', function () {
-//         return view('theme:page.auth.forgot-password');
-//     })->name('forgot-password');
-// });
+    Route::get('sign-up', function () {
+        return view('theme:page.auth.sign-up');
+    })->name('sign-up');
+    Route::get('forgot-password', function () {
+        return view('theme:page.auth.forgot-password');
+    })->name('forgot-password');
+});
