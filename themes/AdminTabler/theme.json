@@ -1,7 +1,7 @@
 {
   "id": "theme-admintabler-27882b66-90e1-4747-bf04-908f721460b95390441",
-  "name": "AdminTabler",
-  "alias": "admintabler",
+  "name": "oengine-admin",
+  "alias": "admin",
   "admin": 1,
   "description": "",
   "keywords": [],

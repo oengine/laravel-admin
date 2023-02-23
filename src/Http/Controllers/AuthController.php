@@ -8,6 +8,10 @@ class AuthController extends BaseController
 {
     public function getLogin()
     {
-        return tview("admin::auth.login");
+        return viewt("admin::auth.login");
+    }
+    public function postLogin()
+    {
+        return viewt("admin::auth.login");
     }
 }

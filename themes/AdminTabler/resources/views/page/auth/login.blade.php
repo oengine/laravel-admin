@@ -9,7 +9,8 @@
             <div class="card card-md">
                 <div class="card-body">
                     <h2 class="h2 text-center mb-4">Login to your account</h2>
-                    <form action="./" method="get" autocomplete="off" novalidate>
+                    <form action="{{route('auth.login')}}" method="POST" autocomplete="off" novalidate>
+                        @csrf
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
                             <input type="email" class="form-control" placeholder="your@email.com" autocomplete="off">
@@ -48,11 +49,14 @@
                             <button type="submit" class="btn btn-primary w-100">Sign in</button>
                         </div>
                     </form>
+                    @livewire('admin::test')
                 </div>
                 <div class="hr-text">or</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col"><a href="#" class="btn w-100">
+                        <div class="col">
+                            <div id="test"></div>
+                            <a href="#" class="btn w-100">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-github" width="24"
                                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
