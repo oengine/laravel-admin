@@ -32,6 +32,9 @@ class AdminServiceProvider extends ServiceProvider
     public function packageRegistered()
     {
         $this->extending();
+        add_filter(PLATFORM_CHECK_PERMISSION, function () {
+            return true;
+        });
     }
     private function bootGate()
     {

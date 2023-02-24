@@ -3,10 +3,9 @@
 namespace OEngine\Admin\Http\Livewire\Auth;
 
 use Illuminate\Support\Facades\Auth;
-use OEngine\Platform\Facades\Theme;
 use OEngine\Reojs\Livewire\Component;
 
-class Login extends Component
+class ForgotPassword extends Component
 {
     public $username;
     public $password;
@@ -27,11 +26,11 @@ class Login extends Component
     }
     public function mount()
     {
-        page_title('Login to your account');
+      
     }
     public function render()
     {
-
-        return viewt('admin::auth.login');
+        
+        return viewt('admin::auth.forgot-password');
     }
 }

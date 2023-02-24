@@ -12,7 +12,6 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use OEngine\Admin\Http\Livewire\Dashboard;
 
-Route::get('/', function () {
-    return "";
-});
+Route::get('/', Dashboard::class)->name('admin.home');
