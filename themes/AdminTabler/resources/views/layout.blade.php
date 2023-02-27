@@ -6,7 +6,7 @@
     @platformHead(after)
 </head>
 
-<body class="{{ theme_class() }}">
+<body class="{{ theme_class() }}" :class="themeDark&&'theme-dark'" x-data="{ themeDark: false }">
     @platformBody(before)
     <div class="page">
         <!-- Sidebar -->
