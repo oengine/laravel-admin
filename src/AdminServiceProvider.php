@@ -4,10 +4,9 @@ namespace OEngine\Admin;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use OEngine\Admin\Builder\Menu\MenuBuilder;
-use OEngine\Admin\Facades\Menu;
 use OEngine\LaravelPackage\ServicePackage;
-use OEngine\Platform\Facades\Module;
+use OEngine\Platform\Facades\Menu;
+use OEngine\Platform\Menu\MenuBuilder;
 use OEngine\Platform\Traits\WithServiceProvider;
 
 class AdminServiceProvider extends ServiceProvider
@@ -53,8 +52,7 @@ class AdminServiceProvider extends ServiceProvider
     public function packageBooted()
     {
         $this->bootGate();
-        Route::matched(function () {
-
+        Menu::Register(function () {
             Menu::link(route('admin.home'), 'Dashboard');
             Menu::link('google.com', 'test123', '<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
