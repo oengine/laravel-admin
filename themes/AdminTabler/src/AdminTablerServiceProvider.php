@@ -134,5 +134,8 @@ class AdminTablerServiceProvider extends ServiceProvider
                 }
             }
         });
+        add_filter('THEME_SIDEBAR_BEFORE',function($prev){
+            return 'abc';
+        });
     }
 }

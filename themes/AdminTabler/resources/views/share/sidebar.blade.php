@@ -204,7 +204,9 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="sidebar-menu">
+            {!! apply_filters('THEME_SIDEBAR_BEFORE', '') !!}
             {!! menu_render() !!}
+            {!! apply_filters('THEME_SIDEBAR_AFTTER', '') !!}
         </div>
     </div>
 </aside>

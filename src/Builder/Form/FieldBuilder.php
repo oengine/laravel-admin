@@ -2,7 +2,7 @@
 
 namespace OEngine\Admin\Builder\Form;
 
-use OEngine\Admin\Builder\HtmlBuilder;
+use OEngine\Platform\HtmlBuilder;
 
 class FieldBuilder extends HtmlBuilder
 {
