@@ -49,14 +49,15 @@ class AdminTablerServiceProvider extends ServiceProvider
     {
         $this->bootGate();
         Menu::renderCallback(function (MenuBuilder $menu) {
+            $classActive = $menu->checkActive() ? 'show' : '';
             if ($menu->checkSub()) {
-                echo '<div id="' . $menu->getId() . '" class="dropdown-menu" data-bs-popper="static">';
+                echo '<div id="' . $menu->getId() . '" class="dropdown-menu ' . $classActive . '" data-bs-popper="static">';
                 foreach ($menu->getItems() as $_item) {
                     echo $_item->toHtml();
                 }
                 echo '</div>';
             } else {
-                echo '<ul id="' . $menu->getId() . '" class="navbar-nav">';
+                echo '<ul id="' . $menu->getId() . '" class="navbar-nav ' . $classActive . '">';
                 foreach ($menu->getItems() as $_item) {
                     echo $_item->toHtml();
                 }
@@ -64,23 +65,24 @@ class AdminTablerServiceProvider extends ServiceProvider
             }
         });
         Menu::renderItemCallback(function (MenuItemBuilder $item) {
+            $classActive = $item->checkActive() ? 'show' : '';
             if ($item->getParent()->checkSub()) {
                 if ($item->checkSubMenu()) {
-                    echo '<div id="' . $item->getId() . '" class="dropend">';
+                    echo '<div id="' . $item->getId() . '" class="dropend ' . $classActive . '">';
                     echo '<a class="dropdown-item dropdown-toggle" href="#' . $item->getSubMenu()->getId() . '" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">';
                     echo $item->getValueText();
                     echo '</a>';
                     echo $item->getSubMenu()->toHtml();
                     echo '</div>';
                 } else {
-                    echo '<a id="' . $item->getId() . '" class="dropdown-item" href="' . $item->getValueLink() . '">';
+                    echo '<a id="' . $item->getId() . '" class="dropdown-item  ' . $classActive . '" href="' . $item->getValueLink() . '">';
                     echo $item->getValueText();
                     echo '</a>';
                 }
             } else {
                 if ($item->checkSubMenu()) {
                     echo '<li id="' . $item->getId() . '" class="nav-item dropdown">';
-                    echo '<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">';
+                    echo '<a class="nav-link dropdown-toggle   ' . $classActive . '" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">';
                     if ($icon = $item->getValueIcon()) {
                         echo '<span class="nav-link-icon d-md-none d-lg-inline-block">';
                         echo $icon;
@@ -107,7 +109,7 @@ class AdminTablerServiceProvider extends ServiceProvider
                 } else {
                     if ($item->getValueType() == MenuItemBuilder::ITEM_LINK) {
                         echo '<li id="' . $item->getId() . '" class="nav-item">';
-                        echo '<a class="nav-link" href="' . $item->getValueLink() . '">';
+                        echo '<a class="nav-link   ' . $classActive . '" href="' . $item->getValueLink() . '">';
                         if ($icon = $item->getValueIcon()) {
                             echo '<span class="nav-link-icon d-md-none d-lg-inline-block">';
                             echo $icon;
@@ -133,9 +135,6 @@ class AdminTablerServiceProvider extends ServiceProvider
                     }
                 }
             }
-        });
-        add_filter('THEME_SIDEBAR_BEFORE',function($prev){
-            return 'abc';
         });
     }
 }
