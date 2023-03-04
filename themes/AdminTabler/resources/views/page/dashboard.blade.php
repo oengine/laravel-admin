@@ -51,6 +51,7 @@
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
+            @include('theme::page.builder.table.index')
         </div>
     </div>
 </div>

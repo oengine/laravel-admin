@@ -2,14 +2,18 @@
 
 namespace OEngine\Admin\Builder\Form;
 
+use OEngine\Admin\Builder\Common\Field;
 use OEngine\Platform\HtmlBuilder;
 
 class FieldBuilder extends HtmlBuilder
 {
-    private $type;
+    private Field $field;
     protected function render()
     {
-        $type = $this->type ?? 'text';
-        echo  viewt('admin::builder.field.' . $type)->render();
+        if ($this->field) {
+            echo  viewt('admin::builder.field.' .$this->field->getFieldType())->render();
+        } else {
+            echo  viewt('admin::builder.field.' . Field::Default())->render();
+        }
     }
 }
