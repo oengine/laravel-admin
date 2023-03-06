@@ -8,16 +8,6 @@ class Form
     {
         return new self();
     }
-    private $fields;
-    public function getFields()
-    {
-        return $this->fields;
-    }
-    public function setFields($fields): self
-    {
-        $this->fields = $fields;
-        return $this;
-    }
     private $layout;
     public function getLayout()
     {

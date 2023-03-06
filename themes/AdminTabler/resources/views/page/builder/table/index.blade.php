@@ -1,5 +1,8 @@
 <div class="card">
     <div class="card-body border-bottom py-3">
+      @json($fields)
+      @json($table)
+      @json($data)
       <div class="d-flex">
         <div class="text-muted">
           Show

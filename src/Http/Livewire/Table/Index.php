@@ -2,14 +2,16 @@
 
 namespace OEngine\Admin\Http\Livewire\Table;
 
+use OEngine\Admin\Builder\Common\Field;
 use OEngine\Admin\Traits\WithTableBuilder;
 use OEngine\Reojs\Livewire\Component;
 
 class Index extends Component
 {
     use WithTableBuilder;
-    public function render()
+    public function getManager()
     {
-        return viewt('admin::table.index');
+        return UserManager::Create();
     }
+  
 }

@@ -8,16 +8,6 @@ class Table
     {
         return new self();
     }
-    private $fields;
-    public function getFields()
-    {
-        return $this->fields;
-    }
-    public function setFields($fields): self
-    {
-        $this->fields = $fields;
-        return $this;
-    }
     private $firstCheckbox = false;
     public function getFirstCheckbox()
     {
@@ -36,6 +26,16 @@ class Table
     public function enableSearchbox($flg = true): self
     {
         $this->searchBox = $flg;
+        return $this;
+    }
+    private $view;
+    public function getView()
+    {
+        return $this->view;
+    }
+    public function setView($view): self
+    {
+        $this->view = $view;
         return $this;
     }
 }
