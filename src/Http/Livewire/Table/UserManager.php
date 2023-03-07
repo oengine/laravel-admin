@@ -17,7 +17,12 @@ class UserManager extends Manager
     public function getFields()
     {
         return [
-            Field::Create('name')
+            Field::Create('name')->Title('name'),
+            Field::Create('email'),
+            Field::Create('status'),
+            Field::Create('info'),
+            Field::Create('created_at'),
+            Field::Create('updated_at')
         ];
     }
     public function getModel()

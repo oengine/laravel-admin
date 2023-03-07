@@ -36,7 +36,6 @@ trait WithTableBuilder
             $query =   $this->makeModel();
             $this->makeQuery($query);
             $fields = $manager->getFields();
-            print_r($fields);
             $data = ColectionPaginate::getPaginate($query, $this->pageSize);
         }
         return viewt('admin::builder.table.index', [

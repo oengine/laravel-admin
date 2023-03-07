@@ -2,6 +2,8 @@
 
 namespace OEngine\Admin\Builder\Common;
 
+use Illuminate\Database\Eloquent\Model;
+
 class Field
 {
     private static $default = self::TEXT;
@@ -19,7 +21,7 @@ class Field
     }
     protected function __construct($fieldName)
     {
-        $this->fieldName = $fieldName;
+        $this->FieldName($fieldName);
     }
     public const TEXT = 'text';
     public const NUMBER = 'number';
@@ -34,7 +36,14 @@ class Field
     public function FieldName($fieldName): self
     {
         $this->fieldName = $fieldName;
+        if (!$this->title)  $this->Title($fieldName);
         return $this;
+    }
+    public function getValue($row)
+    {
+        if (is_a($row, Model::class)) {
+            return $row->{$this->getFieldName()};
+        }
     }
 
     private $fieldType = self::TEXT;
