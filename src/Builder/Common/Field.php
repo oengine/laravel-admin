@@ -23,10 +23,32 @@ class Field
     {
         $this->FieldName($fieldName);
     }
+    public static function getAllType()
+    {
+        return apply_filters('FIELD_TYPE', [
+            self::TEXT, self::NUMBER, self::DATE, self::DATETIME, self::TIME, self::COLOR,
+            self::TEXTAREA, self::QUILL, self::PASSWORD, self::CHECK, self::DROPDOWN, self::MULTI_SELECT,
+            self::TAG, self::FILE, self::IMAGE, self::IMAGE, self::CRON, self::TREEVIEW
+        ]);
+    }
     public const TEXT = 'text';
     public const NUMBER = 'number';
     public const DATE = 'date';
     public const DATETIME = 'datetime';
+    public const TIME = 'time';
+    public const COLOR = 'color';
+    public const TEXTAREA = 'textarea';
+    public const QUILL = 'quill';
+    public const PASSWORD = 'password';
+    public const CHECK = 'check';
+    public const DROPDOWN = 'dropdown';
+    public const MULTI_SELECT = 'multiselect';
+    public const TAG = 'tag';
+    public const FILE = 'file';
+    public const IMAGE = 'image';
+    public const CRON = 'cron';
+    public const TREEVIEW = 'treeview';
+
 
     private $fieldName;
     public function getFieldName()

@@ -7,13 +7,27 @@ use OEngine\Platform\HtmlBuilder;
 
 class FieldBuilder extends HtmlBuilder
 {
+    public static function Create($field, $form)
+    {
+        return new self($field, $form);
+    }
+
     private Field $field;
+    private $form;
+    public function __construct($field, $form)
+    {
+        $this->field = $field;
+        $this->form = $form;
+    }
     protected function render()
     {
+        $fieldType = Field::Default();
         if ($this->field) {
-            echo  viewt('admin::builder.field.' .$this->field->getFieldType())->render();
-        } else {
-            echo  viewt('admin::builder.field.' . Field::Default())->render();
+            $fieldType = $this->field->getFieldType();
         }
+        if (!str_contains('::', $fieldType)) {
+            $fieldType =   'admin::builder.field.' . $fieldType;
+        }
+        echo  viewt($fieldType, ['field' => $this->field, 'form' => $this->form])->render();
     }
 }

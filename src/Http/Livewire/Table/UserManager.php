@@ -2,6 +2,7 @@
 
 namespace OEngine\Admin\Http\Livewire\Table;
 
+use OEngine\Admin\Builder\Common\Button;
 use OEngine\Admin\Builder\Common\Field;
 use OEngine\Admin\Builder\Common\Form;
 use OEngine\Admin\Builder\Common\Manager;
@@ -31,10 +32,16 @@ class UserManager extends Manager
     }
     public function getForm()
     {
-        return Form::Create();
+        return Form::Create()->Title('Thông tin người dùng');
     }
     public function getTable()
     {
-        return Table::Create();
+        return Table::Create()->enableFirstCheckbox()->Title('Thông tin người dùng')->Button([
+            Button::Create('Thêm mới')->Route('admin.table.add', ['table' => 'user']),
+            Button::Create('Sửa')->InTable()->Route('admin.table.edit', ['table' => 'user','id'=>123]),
+            Button::Create('Xoá')->InTable(),
+            Button::Create('Xoá')->InTable(),
+            Button::Create('Xoá')->InTable(),
+        ]);
     }
 }

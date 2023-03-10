@@ -8,6 +8,27 @@ class Table
     {
         return new self();
     }
+
+    private $button = [];
+    public function getButton()
+    {
+        return $this->button;
+    }
+    public function Button($button = []): self
+    {
+        $this->button = $button;
+        return $this;
+    }
+    private $title = '';
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    public function Title($title): self
+    {
+        $this->title = $title;
+        return $this;
+    }
     private $firstCheckbox = false;
     public function getFirstCheckbox()
     {

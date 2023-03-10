@@ -2,14 +2,14 @@
 
 namespace OEngine\Admin\Http\Livewire\Table;
 
-use OEngine\Admin\Traits\WithTableBuilder;
+use OEngine\Admin\Traits\WithForm;
 use OEngine\Reojs\Livewire\Component;
 
 class Edit extends Component
 {
-    use WithTableBuilder;
-    public function render()
+    use WithForm;
+    public function getManager()
     {
-        return viewt('admin::table.index');
+        return UserManager::Create();
     }
 }

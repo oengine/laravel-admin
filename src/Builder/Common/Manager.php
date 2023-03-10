@@ -25,8 +25,14 @@ abstract class Manager
     protected function __construct()
     {
     }
+
     public abstract function getKey();
     public abstract function getFields();
+
+    public function getModelKey()
+    {
+        return "id";
+    }
     public abstract function getModel();
     public abstract function getForm();
     public abstract function getTable();
